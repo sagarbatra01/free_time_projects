@@ -40,7 +40,7 @@ async def on_message(message):
         if "baytak" in user_message.lower():
             await message.channel.send(f'JAAAAAAA {username}, DAGS FÖR LITE YEKHREB BAYTAK!')
             return
-    elif message.channel.name == 'bot-test':
+    elif message.channel.name == 'bot-test' or message.channel.name == 'grg':
         if "smite" in user_message.lower():
             await message.channel.send(f'JAAAAAAAAAA SMITERAS {username}!')
             return
@@ -50,7 +50,7 @@ async def on_message(message):
             return
 
         elif user_message.lower() == "yo":
-            await message.channel.send("Yo!")
+            await message.channel.send("Yoo!")
             return
         
         elif "random" in user_message.lower():
