@@ -1,15 +1,13 @@
 import discord
 import random
 from smite_data import GODS
+from token_data import bot_token
 
 mages     = []
 warriors  = []
 guardians = []
 hunters   = []
 assassins = []
-
-
-
 
 ROLE_TO_LIST = {
     "mage" : mages,
@@ -42,7 +40,7 @@ async def on_message(message):
         if "baytak" in user_message.lower():
             await message.channel.send(f'JAAAAAAA {username}, DAGS FÖR LITE YEKHREB BAYTAK!')
             return
-    elif message.channel.name == 'grg':
+    elif message.channel.name == 'bot-test':
         if "smite" in user_message.lower():
             await message.channel.send(f'JAAAAAAAAAA SMITERAS {username}!')
             return
@@ -68,7 +66,7 @@ async def on_message(message):
                     return
         return
 
-TOKEN = "OTgyMzg0MTU0MzE2NTMzODMw.GRqlBu.SGklbxUzc5Ge2vHUchi1Cna7X2yJ6dMQ3H5SvA"
-client.run(TOKEN)
+
+client.run(bot_token)
 
 
