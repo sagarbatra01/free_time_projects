@@ -14,8 +14,7 @@ ROLE_TO_LIST = {
     "warrior" : warriors,
     "guardian" : guardians,
     "hunter" : hunters,
-    "assassin" : assassins
-}
+    "assassin" : assassins}
 
 for god in GODS:
     ROLE_TO_LIST[GODS[god]].append(god)
