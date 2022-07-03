@@ -1,29 +1,31 @@
 import discord
 import random
 from smite_data import GODS
-from token_data import bot_token
+from .../Unsynced import bot_token
 
-mages     = []
-warriors  = []
+mages = []
+warriors = []
 guardians = []
-hunters   = []
+hunters = []
 assassins = []
 
 ROLE_TO_LIST = {
-    "mage" : mages,
-    "warrior" : warriors,
-    "guardian" : guardians,
-    "hunter" : hunters,
-    "assassin" : assassins}
+    "mage": mages,
+    "warrior": warriors,
+    "guardian": guardians,
+    "hunter": hunters,
+    "assassin": assassins}
 
 for god in GODS:
     ROLE_TO_LIST[GODS[god]].append(god)
 
 client = discord.Client()
 
+
 @client.event
 async def on_ready():
     print('{0.user} has been activated.'.format(client))
+
 
 @client.event
 async def on_message(message):
@@ -43,7 +45,7 @@ async def on_message(message):
         if "smite" in user_message.lower():
             await message.channel.send(f'JAAAAAAAAAA SMITERAS {username}!')
             return
-        
+
         elif "bot" in user_message.lower():
             await message.channel.send('Kalla mig inte b-ordet jao')
             return
@@ -51,13 +53,13 @@ async def on_message(message):
         elif user_message.lower() == "yo":
             await message.channel.send("Yoo!")
             return
-        
+
         elif "random" in user_message.lower():
             if "god" in user_message.lower():
-                    index = random.randint(0, len(GODS.keys()) - 1)
-                    gods = list(GODS.keys())
-                    await message.channel.send("Your pog random god is {}".format(gods[index]))
-                    return
+                index = random.randint(0, len(GODS.keys()) - 1)
+                gods = list(GODS.keys())
+                await message.channel.send("Your pog random god is {}".format(gods[index]))
+                return
             for role in ["mage", "guardian", "warrior", "assassin", "hunter"]:
                 if role in user_message.lower():
                     index = random.randint(0, len(ROLE_TO_LIST[role]) - 1)
@@ -67,5 +69,3 @@ async def on_message(message):
 
 
 client.run(bot_token)
-
-
