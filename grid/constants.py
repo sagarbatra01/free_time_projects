@@ -2,9 +2,10 @@ import pygame
 
 # Window Settings
 APP_NAME = "Algorithm Visualizer"
+WINDOW_SIZE = 1800, 900
 BLOCK_SIZE = 40
-ROWS = 25
-COLS = 45
+ROWS = WINDOW_SIZE[1]//BLOCK_SIZE + 1
+COLS = WINDOW_SIZE[0]//BLOCK_SIZE
 WIN_PIXEL_WIDTH = COLS * BLOCK_SIZE
 WIN_PIXEL_HEIGHT = ROWS * BLOCK_SIZE
 
@@ -34,3 +35,4 @@ pygame.mixer.Sound.set_volume(HOVER_SOUND, 0.5)
 # Game Settings
 CURSOR_RECT_SIZE = 1
 ALGO = "BFS"
+DELAY = 15

@@ -10,7 +10,7 @@ class Block:
         self.size = size
         self.x = col * size
         self.y = row * size
-        self.neighbors = set()
+        self.neighbors = []
         self.color = WHITE
         self.visited = False
         self.parent = None
@@ -30,6 +30,9 @@ class Block:
 
     def set_neighbors(self, neighbors):
         self.neighbors = neighbors
+
+    def add_neighbor(self, neighbor):
+        self.neighbors.append(neighbor)
 
     def set_free(self):
         self.color = FREE_COLOR
@@ -77,3 +80,6 @@ class Block:
 
     def is_path(self):
         return self.color == YELLOW
+
+    def is_start_or_end(self):
+        return self.color == GREEN or self.color == RED
